@@ -1,0 +1,15 @@
+version: "3"
+# run from terminal like:
+# docker-compose up
+#
+# restart: [always, unless-stopped, on-failure, "no"]
+# restart: "no" with quotes because in yaml no is interpreted as false!
+services:
+    pic_validity_check:
+      image: 'pic_validity_check:latest'
+      build: .
+      container_name: pic_validity_check
+      
+      ports:
+        - 8080:8080
+      restart: "no"
